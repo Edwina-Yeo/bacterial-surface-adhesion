@@ -1,0 +1,23 @@
+# Project exclude paths
+/venv/
+/plots
+.idea
+data
+*.txt
+*.png
+*.eps
+figs
+*.jpg
+*.mat
+*.geo
+*.msh
+*.xml
+*.out
+*.pvd
+*.vtu
+*.gif
+*.pdf
+
+./*
+../*
+.DS_Store
