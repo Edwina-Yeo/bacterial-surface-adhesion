@@ -69,10 +69,10 @@ q_diff_exact12(i)=Qxy
 end
 
 subplot(1,2,1)
-plot(beta_vec,q_diff_exact11,'b.',MarkerSize=20,DisplayName='(S18), $Pe_r=5$'); hold on 
+plot(beta_vec,q_diff_exact11,'b.',MarkerSize=20,DisplayName='(S16), $Pe_r=5$'); hold on 
 plot(beta_vec,q_sol11,'b-',DisplayName='Continuum model, $Pe_r=5$'); hold on 
 subplot(1,2,2)
-plot(beta_vec,q_diff_exact12,'b.',MarkerSize=20,DisplayName='(S18), $Pe_r=5$'); hold on 
+plot(beta_vec,q_diff_exact12,'b.',MarkerSize=20,DisplayName='(S16), $Pe_r=5$'); hold on 
 plot(beta_vec,q_sol12,'b-',DisplayName='Continuum model, $Pe_r=5$'); hold on 
 
 per=100
@@ -95,7 +95,7 @@ q_diff_exact12(i)=Qxy
 end
 
 subplot(1,2,1)
-plot(beta_vec,q_diff_exact11,'r.',MarkerSize=20,DisplayName='(S18), $Pe_r=100$'); hold on 
+plot(beta_vec,q_diff_exact11,'r.',MarkerSize=20,DisplayName='(S16), $Pe_r=100$'); hold on 
 plot(beta_vec,q_sol11,'r-',DisplayName='Continuum model, $Pe_r=100$'); hold on 
 legend(Location='northwest')
 title('(a)')
@@ -103,7 +103,7 @@ xlabel('Bretherton parameter, $\beta$')
 ylabel('$Q_{xx}$')
 ylim([0,0.45])
 subplot(1,2,2)
-plot(beta_vec,q_diff_exact12,'r.',MarkerSize=20,DisplayName='(S18), $Pe_r=5$'); hold on 
+plot(beta_vec,q_diff_exact12,'r.',MarkerSize=20,DisplayName='(S16), $Pe_r=5$'); hold on 
 plot(beta_vec,q_sol12,'r-',DisplayName='Continuum model, $Pe_r=5$'); hold on
 title('(b)')
 xlabel('Bretherton parameter, $\beta$')
