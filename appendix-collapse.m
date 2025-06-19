@@ -45,7 +45,7 @@ beta_str="0.88"
 Vs=40.00;% micron/s
 D_r=2
 D_r_str="2"
-beta=0.85
+beta=0.88
 colour='r'
 add_agent_data(L,gam,beta_str,beta,Vs,U,D_r,D_r_str,colour,coeff_agent)
 

@@ -173,7 +173,7 @@ add_particles!(active_particles,i_step,N_arrive) # add particles
 global i_step+=1
 global t+=dt
 
-if mod(i_step,10)==0
+if mod(i_step,10) ==0
 	
 
 	local rho_av = zeros(length(y_edges) - 1, length(x_edges) - 1)

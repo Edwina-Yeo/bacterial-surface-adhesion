@@ -44,10 +44,10 @@ q_diff_exact12(i)=Qxy
 end
 
 subplot(1,2,1)
-plot(beta_vec,q_diff_exact11,'k.',MarkerSize=20,DisplayName='(S18), $Pe_r=0.1$'); hold on 
+plot(beta_vec,q_diff_exact11,'k.',MarkerSize=20,DisplayName='(S16), $Pe_r=0.1$'); hold on 
 plot(beta_vec,q_sol11,'k-',DisplayName='Continuum model, $Pe_r=0.1$'); hold on 
 subplot(1,2,2)
-plot(beta_vec,q_diff_exact12,'k.',MarkerSize=20,DisplayName='(S18), $Pe_r=0.1$'); hold on 
+plot(beta_vec,q_diff_exact12,'k.',MarkerSize=20,DisplayName='(S16), $Pe_r=0.1$'); hold on 
 plot(beta_vec,q_sol12,'k-',DisplayName='Continuum model, $Pe_r=0.1$'); hold on
 per=5
 for i=1:length(beta_vec)
