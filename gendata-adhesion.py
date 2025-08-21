@@ -65,8 +65,8 @@ def calc_flux_dip(Vss, Pers, beta, Vs_val, Dr,dips,dip_str):
         J[i] = np.mean(ad_t)
         sd[i] = np.std(ad_t)
     #        i += 1
-    np.savetxt('data/new/J-Vs' + str(Vs_val) + '-dr-' + str(Dr) + '-beta-' + str(beta) + '-dip-' +dip_str+ '.txt', J)
-    np.savetxt('data/new/sd-Vs' + str(Vs_val) + '-dr-' + str(Dr) + '-beta-' + str(beta) + '-dip-' + dip_str + '.txt', sd)
+    np.savetxt('data/J-Vs' + str(Vs_val) + '-dr-' + str(Dr) + '-beta-' + str(beta) + '-dip-' +dip_str+ '.txt', J)
+    np.savetxt('data/sd-Vs' + str(Vs_val) + '-dr-' + str(Dr) + '-beta-' + str(beta) + '-dip-' + dip_str + '.txt', sd)
 
 
 L=750

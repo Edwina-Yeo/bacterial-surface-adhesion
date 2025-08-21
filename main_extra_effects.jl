@@ -188,7 +188,7 @@ global t+=dt
 
 end
 # master_sol_xb[master_sol_tb.>0]
-writedlm("data/new/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-xbs.txt", master_sol_xb[master_sol_tb.>0], "   ")
-writedlm("data/new/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-tbs.txt", master_sol_tb[master_sol_tb.>0], "   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-xbs.txt", master_sol_xb[master_sol_tb.>0], "   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-tbs.txt", master_sol_tb[master_sol_tb.>0], "   ")
 
 end

@@ -32,7 +32,7 @@ do
   dip=${dips[$j]}
   echo $dip
 
-  julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "0.0" &
+#  julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "0.0" &
 
 done
 
