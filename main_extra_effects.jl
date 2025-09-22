@@ -29,14 +29,14 @@ function swim(t, Vs, beta, Pe_r,dip, Lx, Ly, dt)
 
 
 # 		force dipole contributions to velocity
-        v_FD=-3*dip.*(1 .- 3*(sin.(master_sol_theta[active_particles])).^2)./(8* master_sol_y[active_particles].^2)     # vertical wall induced vel
-        u_FD=3*dip*sin.(2*master_sol_theta[active_particles])./(8* master_sol_y[active_particles].^2) # vertical vel
-        th_FD=-3*dip*sin.(2*master_sol_theta[active_particles]).*(1 .+ beta/2*(1 .+ sin.(master_sol_theta[active_particles])).^2)./(16* master_sol_y[active_particles].^3)    # induced rotation
+       # v_FD=-3*dip.*(1 .- 3*(sin.(master_sol_theta[active_particles])).^2)./(8* master_sol_y[active_particles].^2)     # vertical wall induced vel
+       # u_FD=3*dip*sin.(2*master_sol_theta[active_particles])./(8* master_sol_y[active_particles].^2) # vertical vel
+      #  th_FD=-3*dip*sin.(2*master_sol_theta[active_particles]).*(1 .+ beta/2*(1 .+ sin.(master_sol_theta[active_particles])).^2)./(16* master_sol_y[active_particles].^3)    # induced rotation
 
         # step 1: update all particle positions
-		master_sol_x[active_particles]=master_sol_x[active_particles] .+ (dt * (master_sol_y[active_particles] .+ u_FD .+  Vs * cos.(master_sol_theta[active_particles])))
-        master_sol_y[active_particles]= master_sol_y[active_particles] .+ (dt * (v_FD .+ Vs * sin.(master_sol_theta[active_particles])))
-        master_sol_theta[active_particles] =master_sol_theta[active_particles] .+ dt * (th_FD .+  - 1 / 2 .+ beta / 2 * cos.(2 * master_sol_theta[active_particles]) ).+  sqrt(2 * dt / Pe_r) * (randn(length(master_sol_theta[active_particles])))
+		master_sol_x[active_particles]=master_sol_x[active_particles] .+ (dt * (master_sol_y[active_particles] .+ 3*dip*sin.(2*master_sol_theta[active_particles])./(8* master_sol_y[active_particles].^2).+  Vs * cos.(master_sol_theta[active_particles])))
+        master_sol_y[active_particles]= master_sol_y[active_particles] .+ (dt * (-3*dip.*(1 .- 3*(sin.(master_sol_theta[active_particles])).^2)./(8* master_sol_y[active_particles].^2)   .+ Vs * sin.(master_sol_theta[active_particles])))
+        master_sol_theta[active_particles] =master_sol_theta[active_particles] .+ dt * (-3*dip*sin.(2*master_sol_theta[active_particles]).*(1 .+ beta/2*(1 .+ sin.(master_sol_theta[active_particles])).^2)./(16* master_sol_y[active_particles].^3).+  - 1 / 2 .+ beta / 2 * cos.(2 * master_sol_theta[active_particles]) ).+  sqrt(2 * dt / Pe_r) * (randn(length(master_sol_theta[active_particles])))
 
         # now apply the no flux BC on top:
         master_sol_y[active_particles] = [yi > Ly ? Ly-(yi-Ly) : yi for yi in master_sol_y[active_particles]]
