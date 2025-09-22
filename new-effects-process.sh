@@ -40,7 +40,7 @@ echo "vs=70, dr=2, beta=0"
  do
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
-
+dip=${dips[$j]}
  julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
@@ -59,7 +59,7 @@ echo "vs=10, dr=0.5, beta=0.0"
  do
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
-
+dip=${dips[$j]}
  julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
