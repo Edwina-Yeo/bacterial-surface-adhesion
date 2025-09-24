@@ -112,7 +112,7 @@ echo "vs=22, dr=1, beta=0.1"
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
  wait
@@ -130,7 +130,7 @@ echo "vs=40, dr=2, beta=0.88"
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
 wait
@@ -144,7 +144,7 @@ echo "vs=40, dr=2, beta=0.25"
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
 wait
@@ -162,7 +162,7 @@ beta=0.4
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
 
@@ -177,7 +177,7 @@ beta=0.0
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
 
@@ -197,7 +197,7 @@ echo "vs=70, dr=2, beta=0"
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
 
@@ -235,7 +235,7 @@ echo "vs=6, dr=5, beta=0.0"
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
 
@@ -256,7 +256,7 @@ echo "vs=100, dr=1, beta=0.0"
  	Vs=${Vss[$j]}
  	Per=${Pers[$j]}
 dip=${dips[$j]}
- julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
+# julia main_extra_effects.jl  "${beta}" "${Vs}"  "${Per}" "${dip}" &
 
  done
 
