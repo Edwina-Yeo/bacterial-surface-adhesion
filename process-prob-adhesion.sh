@@ -19,6 +19,8 @@ do
 
 done
 end
+done
+end
 
 wait
 
@@ -35,6 +37,8 @@ do
 
         julia main_prob_adhesion.jl  "${beta}" "${Vs}"  "${Per}" "${kappa}" "${rep}" &
 
+done
+end
 done
 end
 
@@ -55,7 +59,8 @@ do
 
 done
 end
-
+done
+end
 
 
 
