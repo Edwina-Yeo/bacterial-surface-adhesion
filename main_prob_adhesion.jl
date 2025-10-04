@@ -125,16 +125,17 @@ beta = parse(Float64, ARGS[1])
 Vs=parse(Float64,ARGS[2])
 Pe_r =parse(Float64,ARGS[3])
 
-#kappa=parse(Float64,ARGS[4])
+kappa=parse(Float64,ARGS[4])
+rep_num=parse(Float64,ARGS[5])
 #beta=0.1 
 #Vs=1.68654808542314
 #Pe_r=1#790569415042095
-kappa=0.95
+#kappa=0.95
 
 
 Np = 2
 dt = 0.01
-T = 10300
+T = 2800
 N_timesteps=Int(T/dt)
 t = 0
 Ly = 1.5
@@ -151,7 +152,6 @@ global N_arrive = 100
 
 size_array=Int(N_arrive*N_timesteps)# size of all the space we need
 global master_sol_x=zeros(size_array,) # for solution x
-
 global master_sol_xb=zeros(size_array,) # for stuck bacteria
 global master_sol_tb=zeros(size_array,) # time at which they stuck
 global master_adhesion_rand=rand(size_array,) # adhesion random numbers
@@ -199,9 +199,25 @@ add_particles!(active_particles,i_step,N_arrive) # add particles
 global t+=dt
 
 end
+
+
+
+
+if round(t)==300
+#Save the first lot
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-active-$rep_num.txt", active_particles,"   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-y-$rep_num.txt", master_sol_y, "   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-x-$rep_num.txt", master_sol_x,"   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-theta-$rep_num.txt", master_sol_theta, "   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-xbs-$rep_num.txt", master_sol_xb,"   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-tbs-$rep_num.txt", master_sol_tb, "   ")
+        writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-t-$rep_num.txt", t, "   ")
+end
+
+
 # master_sol_xb[master_sol_tb.>0]
-writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-xbs.txt", master_sol_xb[master_sol_tb.>0], "   ")
-writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-tbs.txt", master_sol_tb[master_sol_tb.>0], "   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-rep-$rep_num-xbs.txt", master_sol_xb[master_sol_tb.>0], "   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-kappa-$kappa-rep-$rep_num-tbs.txt", master_sol_tb[master_sol_tb.>0], "   ")
 
 end
 
