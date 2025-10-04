@@ -28,15 +28,11 @@ using Distributions
 function swim(t, Vs, beta, Pe_r,dip, Lx, Ly, dt)
 
 
-# 		force dipole contributions to velocity
-       # v_FD=-3*dip.*(1 .- 3*(sin.(master_sol_theta[active_particles])).^2)./(8* master_sol_y[active_particles].^2)     # vertical wall induced vel
-       # u_FD=3*dip*sin.(2*master_sol_theta[active_particles])./(8* master_sol_y[active_particles].^2) # vertical vel
-      #  th_FD=-3*dip*sin.(2*master_sol_theta[active_particles]).*(1 .+ beta/2*(1 .+ sin.(master_sol_theta[active_particles])).^2)./(16* master_sol_y[active_particles].^3)    # induced rotation
-
         # step 1: update all particle positions
 		master_sol_x[active_particles]=master_sol_x[active_particles] .+ (dt * (master_sol_y[active_particles] .+ 3*dip*sin.(2*master_sol_theta[active_particles])./(8* master_sol_y[active_particles].^2).+  Vs * cos.(master_sol_theta[active_particles])))
         master_sol_y[active_particles]= master_sol_y[active_particles] .+ (dt * (-3*dip.*(1 .- 3*(sin.(master_sol_theta[active_particles])).^2)./(8* master_sol_y[active_particles].^2)   .+ Vs * sin.(master_sol_theta[active_particles])))
-        master_sol_theta[active_particles] =master_sol_theta[active_particles] .+ dt * (-3*dip*sin.(2*master_sol_theta[active_particles]).*(1 .+ beta/2*(1 .+ sin.(master_sol_theta[active_particles])).^2)./(16* master_sol_y[active_particles].^3).+  - 1 / 2 .+ beta / 2 * cos.(2 * master_sol_theta[active_particles]) ).+  sqrt(2 * dt / Pe_r) * (randn(length(master_sol_theta[active_particles])))
+       master_sol_theta[active_particles] =master_sol_theta[active_particles] .+ dt * (-3*dip*sin.(2*master_sol_theta[active_particles]).*(1 .+ beta/2*(1 .+ sin.(master_sol_theta[active_particles])).^2)./(16* master_sol_y[active_particles].^3).+  - 1 / 2 .+ beta / 2 * cos.(2 * master_sol_theta[active_particles]) ).+  sqrt(2 * dt / Pe_r) * (randn(length(master_sol_theta[active_particles])))
+
 
         # now apply the no flux BC on top:
         master_sol_y[active_particles] = [yi > Ly ? Ly-(yi-Ly) : yi for yi in master_sol_y[active_particles]]
@@ -117,15 +113,11 @@ beta = parse(Float64, ARGS[1])
 Vs=parse(Float64,ARGS[2])
 Pe_r =parse(Float64,ARGS[3])
 dip=parse(Float64,ARGS[4])
-
-print(dip)
-# beta=0.1
-# Vs=1.68654808542314
-# Pe_r=00790569415042095
+rep_num=parse(Float64,ARGS[5])
 
 Np = 2
 dt = 0.01
-T = 10300
+T = 2800
 N_timesteps=Int(T/dt)
 t = 0
 Ly = 1.5
@@ -188,7 +180,6 @@ global t+=dt
 
 end
 # master_sol_xb[master_sol_tb.>0]
-writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-xbs.txt", master_sol_xb[master_sol_tb.>0], "   ")
-writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-tbs.txt", master_sol_tb[master_sol_tb.>0], "   ")
-
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-rep-$rep_num-xbs.txt", master_sol_xb[master_sol_tb.>0], "   ")
+writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-dip-$dip-rep-$rep_num-tbs.txt", master_sol_tb[master_sol_tb.>0], "   ")
 end
