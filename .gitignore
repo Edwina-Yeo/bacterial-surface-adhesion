@@ -1,6 +1,7 @@
 # Project exclude paths
 /venv/
-/plots
+/plot
+/archiv
 .idea
 data
 *.txt

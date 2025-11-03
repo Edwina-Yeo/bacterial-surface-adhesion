@@ -1,5 +1,3 @@
-
-
 J=17
 # Arrays with normal spacing between elements
 

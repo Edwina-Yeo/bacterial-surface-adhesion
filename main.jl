@@ -100,19 +100,19 @@ function calc_expansion_sol(Per, beta, theta_vec)
     return sol
 end
 
-# beta = parse(Float64, ARGS[1])
-# Vs=parse(Float64,ARGS[2])
-# Pe_r =parse(Float64,ARGS[3])
-beta=0.1
+ beta = parse(Float64, ARGS[1])
+ Vs=parse(Float64,ARGS[2])
+ Pe_r =parse(Float64,ARGS[3])
+
+#beta=0.1
+#Vs=1.68654808542314
+#Pe_r=00790569415042095
 
 
-
-Vs=1.68654808542314
-Pe_r=00790569415042095
 
 Np = 2
 dt = 0.01
-T = 100
+T = 50
 N_timesteps=Int(T/dt)
 t = 0
 Ly = 1.5
@@ -124,6 +124,10 @@ Nt = 50
 L_tol = 0.1
 dt_save=10
 global N_arrive = 100
+
+
+
+
 
 size_array=Int(N_arrive*N_timesteps)# size of all the space we need
 global master_sol_x=zeros(size_array,) # for solution x
@@ -160,8 +164,9 @@ function add_particles!(active_particles,last_index,N_arrive)
 return 
 end
 
+@time begin
+
 # Start timing
-@time begin 
 global i_step=1
 global t=0
 
@@ -177,5 +182,6 @@ end
 # master_sol_xb[master_sol_tb.>0]
 writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-xbs.txt", master_sol_xb[master_sol_tb.>0], "   ")
 writedlm("data/Vs$Vs-beta-$beta-Per-$Pe_r-tbs.txt", master_sol_tb[master_sol_tb.>0], "   ")
+
 
 end
