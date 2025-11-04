@@ -51,13 +51,10 @@ y_50 = v[:,1]
 
 # enerate values for x and yfrom mpl_toolkits.axes_grid1.inset_locator import inset_axes
 x = np.linspace(0.0001, 3, 1000)
-y = np.linspace(0.0001, 0.16, 500)
+y = np.linspace(0.0001, 0.4, 1000)
 
-# x = np.linspace(0.01, 3, 300)
-# y = np.linspace(0.01, 0.4, 300)
-
-x = np.linspace(0.0001, 3, 1000)
-y = np.linspace(0.0001, 0.15, 300)
+# # x = np.linspace(0.0001, 3, 300)
+# # y = np.linspace(0.0001, 0.14, 300)
 
 X_cont, Y_cont = np.meshgrid(x, y)
 
@@ -92,7 +89,7 @@ total = np.ones(    (len(x_edges) - 1, len(y_edges) - 1))  # average counter: no
 
 k_av = 1
 th = np.pi * np.ones((len(x_edges) - 1, len(y_edges) - 1))
-for k in range(500, k_plot):
+for k in range(1000, k_plot):
     rho += np.loadtxt(f"data/density/rho{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt" )
     total_new = np.loadtxt(f"data/density/total{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt")
 
@@ -108,7 +105,7 @@ rho = rho / (k_av * num_in_box)
 plt.figure()
 
 
-cs = plt.contour(X[1:, 1:], Y[1:, 1:], gaussian_filter(rho, sigma=3), [0.5])
+cs = plt.contour(X[1:, 1:], Y[1:, 1:], gaussian_filter(rho, sigma=2.5), [0.5])
 p = cs.collections[0].get_paths()[0]
 v = p.vertices
 x_a = v[:, 0]
@@ -155,4 +152,4 @@ if jj == 0:
 jj+=1
 
 plt.show()
-fig.savefig('flux-cont.jpg',bbox_inches='tight',dpi=500)
+#fig.savefig('flux-cont.jpg',bbox_inches='tight',dpi=500)

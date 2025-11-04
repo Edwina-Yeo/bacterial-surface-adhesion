@@ -272,7 +272,7 @@ xlabel('Bretherton parameter, $\beta$')
 ylabel('$Q_{xy}$')
 ylim([0,0.25])
 exportgraphics(figure1,'beta_validity.pdf')
-%%
+%
 
 
 

@@ -81,7 +81,6 @@ Qxy=trapz(theta_vec,sol.*sin(theta_vec).*cos(theta_vec));
 
 q_diff_exact11(i)=Qxx-1/2;
 q_diff_exact12(i)=Qxy;
-% polarplot(theta_vec,sol); hold on
 
 end
 plot(p_vec,q_diff_exact11,'k',DisplayName='$Q_{xx}$, (S16)'); hold on 
@@ -89,10 +88,7 @@ plot(p_vec,q_diff_exact12,'r',DisplayName='$Q_{xy}$, (S16)'); hold on
 plot(p_vec,q_sol11,'k-.',DisplayName='$Q_{xx}$, continuum model - linear closure'); hold on 
 plot(p_vec,q_sol12,'r-.',DisplayName='$Q_{xy}$, continuum model - linear closure'); hold on 
 
-% plot(p_vec,Q11_doi,'k--',DisplayName='$Q_{xx}$, Doi'); hold on 
-% plot(p_vec,Q12_doi,'r--',DisplayName='$Q_{xx}$, Doi'); hold on 
-% plot(p_vec,Q12_hinch,'r.',DisplayName='$Q_{xy}$, Hinch'); hold on 
-% plot(p_vec,Q11_hinch,'k.',DisplayName='$Q_{xx}$, Hinch '); hold on 
+
 title('(b)')
 lk=legend(Location="northwest")
 lk.FontSize=22

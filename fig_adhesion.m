@@ -146,7 +146,7 @@ exportgraphics(figure1,'flux.pdf')
 
 
 
-%% 
+%
 
 % Generates S1 version with adhesion measured between 0.5 and 3. 
 
@@ -291,10 +291,10 @@ Vss=Vs./U(1:ii);
 Pers=U(1:ii)./(D_r*L);
 
 % Load agent based data
-S=load("data_0/data_0/sd-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
+S=load("data/adhesion-x-[0,3]/sd-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
     +".txt")';
 
-J=load("data_0/data_0/J-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
+J=load("data/adhesion-x-[0,3]/J-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
     +".txt")';
 
 
@@ -333,10 +333,10 @@ Pers=U(1:ii)./(D_r*L);
 
 % Load agent based data
 
-S=load("data/sd-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
+S=load("data/adhesion-x-[0.5,3]/sd-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
     +".txt")';
 
-J=load("data/J-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
+J=load("data/adhesion-x-[0.5,3]/J-Vs"+string(Vs)+"-dr-"+string(D_r)+"-beta-"+beta_str ...
     +".txt")';
 
 
