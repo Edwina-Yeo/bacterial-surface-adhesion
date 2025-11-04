@@ -87,14 +87,14 @@ print(k_plot)
 
 
 k = k_plot - 1
-rho = np.loadtxt(f"data/density/rho{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt")
+rho = np.loadtxt(f"Data/density/rho{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt")
 total = np.ones(    (len(x_edges) - 1, len(y_edges) - 1))  # average counter: not all datasets will feature data in each point.
 
 k_av = 1
 th = np.pi * np.ones((len(x_edges) - 1, len(y_edges) - 1))
 for k in range(500, k_plot):
-    rho += np.loadtxt(f"data/density/rho{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt" )
-    total_new = np.loadtxt(f"data/density/total{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt")
+    rho += np.loadtxt(f"Data/density/rho{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt" )
+    total_new = np.loadtxt(f"Data/density/total{k}-Vs{Vs}-beta-{beta}-Per-{Pe_r}.txt")
 
     for j in range(len(y_edges) - 1):
         for i in range(len(x_edges) - 1):

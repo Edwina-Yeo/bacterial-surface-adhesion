@@ -24,10 +24,10 @@ colour(4,:)=[0 0.447058823529412 0.741176470588235]
 i=1
 J=[];
 for kappa=[1.0]
-J(1,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-0.0-rate.txt");
-J(2,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-1.0-rate.txt");
-J(3,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-2.0-rate.txt");
-J(4,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-3.0-rate.txt");
+J(1,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-0.0-rate.txt");
+J(2,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-1.0-rate.txt");
+J(3,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-2.0-rate.txt");
+J(4,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-1.0-rep-3.0-rate.txt");
 
 errorbar(gam,mean(J,1),std(J,1),'.','Color',colour(i,:),LineWidth=2,MarkerSize=20,DisplayName='$\mathcal{V}_s='+string(Vs)+'\mu$m/s, $D_r$='+D_r_str...
     +'s$^{-1}$, $\beta$='+string(beta)+', $\kappa=$'+string(kappa));hold on
@@ -36,10 +36,10 @@ end
 
 for kappa=[0.8:-0.2:0.4]
     J=[];
-J(1,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-0.0-rate.txt");
-J(2,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-1.0-rate.txt");
-J(3,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-2.0-rate.txt");
-J(4,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-3.0-rate.txt");
+J(1,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-0.0-rate.txt");
+J(2,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-1.0-rate.txt");
+J(3,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-2.0-rate.txt");
+J(4,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-kappa-"+string(kappa)+"-rep-3.0-rate.txt");
 
 errorbar(gam,mean(J,1),std(J,1),'x','Color',colour(i,:),LineWidth=2,MarkerSize=20,DisplayName='$\mathcal{V}_s='+string(Vs)+'\mu$m/s, $D_r$='+D_r_str...
     +'s$^{-1}$, $\beta$='+string(beta)+', $\kappa=$'+string(kappa));hold on
@@ -75,10 +75,10 @@ figure1=figure('units','inch','position',[0,0,8,6 ...
 
         colour=[0.392156862745098 0.831372549019608 0.0745098039215686];
 
-J(1,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-0.0-rate.txt");
-J(2,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-1.0-rate.txt");
-J(3,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-2.0-rate.txt");
-J(4,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-3.0-rate.txt");
+J(1,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-0.0-rate.txt");
+J(2,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-1.0-rate.txt");
+J(3,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-2.0-rate.txt");
+J(4,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-3.0-rate.txt");
 Vs=70
 D_r_str=2
 beta=0
@@ -86,10 +86,10 @@ errorbar(gam,mean(J,1),std(J,1),'r.',Color=colour,LineWidth=2,MarkerSize=20,Disp
     +'s$^{-1}$, $\beta$='+string(beta)+', $\alpha$=0');hold on
 
     J=[];
-J(1,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-0.0-rate-dip.txt");
-J(2,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-1.0-rate-dip.txt");
-J(3,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-2.0-rate-dip.txt");
-J(4,:)=load("data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-3.0-rate-dip.txt");
+J(1,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-0.0-rate-dip.txt");
+J(2,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-1.0-rate-dip.txt");
+J(3,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-2.0-rate-dip.txt");
+J(4,:)=load("Data/SI-plots/Vs70.0-beta-0.0-D_r-2.0-rep-3.0-rate-dip.txt");
 
 errorbar(gam,mean(J,1),std(J,1),'rx',Color=colour,LineWidth=2,MarkerSize=20,DisplayName='$\mathcal{V}_s='+string(Vs)+'\mu$m/s, $D_r$='+D_r_str...
     +'s$^{-1}$, $\beta$='+string(beta)+', $\alpha$=31.82$\mu$m$^2$/s');hold on
@@ -98,10 +98,10 @@ errorbar(gam,mean(J,1),std(J,1),'rx',Color=colour,LineWidth=2,MarkerSize=20,Disp
 beta=0.1
 
     J=[];
-J(1,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-0.0-rate.txt");
-J(2,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-1.0-rate.txt");
-J(3,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-2.0-rate.txt");
-J(4,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-3.0-rate.txt");
+J(1,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-0.0-rate.txt");
+J(2,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-1.0-rate.txt");
+J(3,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-2.0-rate.txt");
+J(4,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-3.0-rate.txt");
 Vs=22
 D_r_str=1
 
@@ -109,10 +109,10 @@ errorbar(gam,mean(J,1),std(J,1),'r.',LineWidth=2,MarkerSize=20,DisplayName='$\ma
     +'s$^{-1}$, $\beta$='+string(beta)+', $\alpha$=0');hold on
 
     J=[];
-J(1,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-0.0-rate-dip.txt");
-J(2,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-1.0-rate-dip.txt");
-J(3,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-2.0-rate-dip.txt");
-J(4,:)=load("data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-3.0-rate-dip.txt");
+J(1,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-0.0-rate-dip.txt");
+J(2,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-1.0-rate-dip.txt");
+J(3,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-2.0-rate-dip.txt");
+J(4,:)=load("Data/SI-plots/Vs22.0-beta-0.1-D_r-1.0-rep-3.0-rate-dip.txt");
 
 errorbar(gam,mean(J,1),std(J,1),'rx',LineWidth=2,MarkerSize=20,DisplayName='$\mathcal{V}_s='+string(Vs)+'\mu$m/s, $D_r$='+D_r_str...
     +'s$^{-1}$, $\beta$='+string(beta)+', $\alpha$=31.82$\mu$m$^2$/s');hold on
@@ -122,19 +122,19 @@ Vs=10
 D_r_str=0.5
 colour=[1 0.411764705882353 0.16078431372549];
 
-J(1,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-0.0-rate.txt");
-J(2,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-1.0-rate.txt");
-J(3,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-2.0-rate.txt");
-J(4,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-3.0-rate.txt");
+J(1,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-0.0-rate.txt");
+J(2,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-1.0-rate.txt");
+J(3,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-2.0-rate.txt");
+J(4,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-3.0-rate.txt");
 
 errorbar(gam,mean(J,1),std(J,1),'.',Color=colour,LineWidth=2,MarkerSize=20,DisplayName='$\mathcal{V}_s='+string(Vs)+'\mu$m/s, $D_r$='+D_r_str...
     +'s$^{-1}$, $\beta$='+string(beta)+', $\alpha$=0');hold on
 
     J=[];
-J(1,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-0.0-rate-dip.txt");
-J(2,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-1.0-rate-dip.txt");
-J(3,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-2.0-rate-dip.txt");
-J(4,:)=load("data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-3.0-rate-dip.txt");
+J(1,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-0.0-rate-dip.txt");
+J(2,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-1.0-rate-dip.txt");
+J(3,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-2.0-rate-dip.txt");
+J(4,:)=load("Data/SI-plots/Vs10.0-beta-0.0-D_r-0.5-rep-3.0-rate-dip.txt");
 
 
 
