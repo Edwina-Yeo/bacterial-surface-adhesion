@@ -10,6 +10,8 @@ To create data the appropriate bash processing script should be run, these scrip
 
 Mathematica script: Analytical_calcualtions.nb carries out algebraic manuplations detailed in SI appendix. 
 
+Raw Data: included in zipped format in Data folder, unzip in place. 
+
 Processing scripts:
 1. process-adhesion.sh: runs batched simulations to calculate data of adhesion of bacteria in varying wall shear rates using main.jl (Fig 1b and Fig 2c).
 2. process-SI.sh: runs batched simulations to calculate data of adhesion of bacteria in varying wall shear rates with different wall interaction physics using main-rate-kappa.jl and main-rate-dip.jl (Fig S4a and Fig S4b).
