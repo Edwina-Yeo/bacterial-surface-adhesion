@@ -13,6 +13,12 @@ vs=logspace(-10,0,1000);%(eps^4,1,1000);
 per=logspace(-7,5,1000);
 [V,P]=meshgrid(vs,per);
 
+
+% axes limits. 
+xmin=5e-6;
+xmax=10;
+ymin=5e-4;
+ymax=1e4;
 % Using the spherical diffusivity. 
 eps=(2*V.^2.*P./((4+P.^2))).^(1/3); % Epsilon over the 2D domain
 Peff=(2*V.^2.*P./((4+P.^2)));% Epsilon over the 2D domain
